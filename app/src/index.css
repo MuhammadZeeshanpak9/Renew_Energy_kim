@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ELEV8 Renewable Energy - Cosmic Palette */
+    --void: #030014;
+    --forest-deep: #05001a;
+    --forest-mid: #0a0033;
+    --emerald: #140066;
+    --starlight: #f0f4ff;
+    --silver: rgba(240, 244, 255, 0.75);
+    --ash: rgba(240, 244, 255, 0.45);
+    --glass-surface: rgba(255, 255, 255, 0.07);
+    --glass-edge: rgba(255, 255, 255, 0.18);
+    --glow-core: rgba(0, 225, 255, 0.2);
+    --solar-gold: #00e1ff;
+    --gold-bright: rgba(0, 255, 255, 0.4);
+    --leaf-tone: rgba(140, 100, 255, 0.3);
+
+    --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+    --background: 240 100% 4%;
+    --foreground: 220 100% 98%;
+    --card: 240 100% 4%;
+    --card-foreground: 220 100% 98%;
+    --popover: 240 100% 4%;
+    --popover-foreground: 220 100% 98%;
+    --primary: 190 100% 50%;
+    --primary-foreground: 240 100% 4%;
+    --secondary: 240 80% 12%;
+    --secondary-foreground: 220 100% 98%;
+    --muted: 240 80% 12%;
+    --muted-foreground: 220 20% 70%;
+    --accent: 240 80% 12%;
+    --accent-foreground: 220 100% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 40% 22%;
+    --input: 240 40% 22%;
+    --ring: 190 100% 50%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-primary);
+    background: linear-gradient(180deg, #030014 0%, #05001a 50%, #140066 100%);
+    background-attachment: fixed;
+    color: var(--starlight);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(0, 225, 255, 0.3);
+    color: #f0f4ff;
+  }
+}
+
+/* Starburst Animations - Cosmic Neon Tones */
+@keyframes slowSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spokePulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.9); }
+  50% { opacity: 0.9; transform: scaleY(1.1); }
+}
+
+@keyframes outerRayPulse {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes corePulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.85; }
+}
+
+@keyframes ringPulse {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.35; }
+}
+
+@keyframes drift {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100vw); }
+}
+
+/* Glass card sheen - cosmic neon */
+.glass-sheen {
+  background: linear-gradient(135deg, rgba(0,225,255,0.08) 0%, rgba(255,255,255,0.02) 50%, rgba(140,100,255,0.06) 100%);
+}
+
+/* Focus states - neon cyan */
+@layer base {
+  *:focus-visible {
+    outline: 2px solid rgba(0, 225, 255, 0.5);
+    outline-offset: 2px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

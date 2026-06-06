@@ -1,0 +1,23 @@
+# Dependency directories
+node_modules/
+app/node_modules/
+
+# Build outputs
+dist/
+app/dist/
+dist-ssr/
+app/dist-ssr/
+
+# Logs
+*.log
+logs/
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
