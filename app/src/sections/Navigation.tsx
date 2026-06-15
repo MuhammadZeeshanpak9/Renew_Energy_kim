@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Menu, X } from 'lucide-react'
 import { useCountdown } from '@/hooks/useCountdown'
+import logoImg from '@/Logo/Logo.png'
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -38,11 +39,20 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-[72px] px-6 lg:px-20 max-w-[1400px] mx-auto">
           {/* Wordmark */}
           <div
-            className="text-lg font-medium tracking-[0.12em] uppercase cursor-pointer"
-            style={{ color: '#f0ede5', fontFamily: 'var(--font-primary)' }}
+            className="flex items-center gap-3 cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            ELEV8
+            <img
+              src={logoImg}
+              alt="ELEV8 Logo"
+              className="w-10 h-10 rounded-full object-cover ring-2 ring-white/20"
+            />
+            <span
+              className="text-lg font-medium tracking-[0.12em] uppercase"
+              style={{ color: '#f0ede5', fontFamily: 'var(--font-primary)' }}
+            >
+              ELEV8
+            </span>
           </div>
 
           {/* Desktop links + compact countdown */}
